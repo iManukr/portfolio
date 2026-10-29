@@ -1,4 +1,4 @@
-# Emmanuel Kipngeno — Portfolio
+# Emmanuel Kipngeno: Portfolio
 
 Static portfolio site. No build step.
 

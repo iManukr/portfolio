@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Emmanuel Kipngeno</title>
-<meta name="description" content="Emmanuel Kipngeno — Data Engineer and Analytics Engineer in Nairobi. Lakehouse migrations, streaming pipelines, dbt and applied ML.">
-<meta property="og:title" content="Emmanuel Kipngeno · Data Engineer">
-<meta property="og:description" content="Emmanuel Kipngeno — Data Engineer and Analytics Engineer in Nairobi. Lakehouse migrations, streaming pipelines, dbt and applied ML.">
+<meta name="description" content="Emmanuel Kipngeno, Data Engineer and Data Analyst in Nairobi. Python, SQL and PostgreSQL pipelines: incremental ETL, Kafka streaming and data validation.">
+<meta property="og:title" content="Emmanuel Kipngeno · Data Engineer &amp; Data Analyst">
+<meta property="og:description" content="Emmanuel Kipngeno, Data Engineer and Data Analyst in Nairobi. Python, SQL and PostgreSQL pipelines: incremental ETL, Kafka streaming and data validation.">
 <meta property="og:image" content="/eth-dashboard.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: results-first. Hero pairs the name with a SQL query whose result set is the career impact; then case studies (problem → build → result), experience timeline, toolkit, credentials, contact. */
+/* Layout: evidence-first. Hero pairs the name with a SQL query listing pipelines and their guarantees; then case studies (problem → build → result), experience timeline, toolkit, education, contact. */
 :root{
   --bg:#f2f4f8; --surface:#ffffff; --ink:#0e1b3d; --muted:#56607a; --line:#d6dbe7;
   --cobalt:#2443c9; --signal:#e8590c; --signal-soft:#fdeee4; --cobalt-soft:#e7ebfb;
@@ -74,6 +74,7 @@ nav ul a:hover{color:var(--ink)}
 .result th{text-align:left;font-weight:500;color:var(--muted);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:10px 20px;background:var(--bg)}
 .result td{padding:12px 20px;border-top:1px solid var(--line);white-space:nowrap}
 .result td.v{font:800 22px var(--display);font-stretch:110%;color:var(--signal);text-align:right}
+.result td.v.sm{font-size:17px}
 .result tr{animation:row .5s ease both}
 .result tr:nth-child(2){animation-delay:.15s}.result tr:nth-child(3){animation-delay:.3s}
 @keyframes row{from{transform:translateY(6px)}to{transform:none}}
@@ -83,23 +84,6 @@ nav ul a:hover{color:var(--ink)}
 .head{display:grid;grid-template-columns:220px 1fr;gap:28px;margin-bottom:36px;align-items:end}
 .head h2{font-size:clamp(34px,5vw,58px);font-weight:900;font-stretch:118%;letter-spacing:-.03em}
 .head p{margin:12px 0 0;color:var(--muted);max-width:56ch}
-
-/* featured */
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface)}
-.feature-copy{padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:16px;min-width:0}
-.badge{align-self:flex-start;font:500 12px var(--mono);padding:6px 10px;border-radius:999px;background:var(--signal-soft);color:var(--signal)}
-.feature h3{font-size:clamp(34px,4.6vw,52px);font-weight:900;font-stretch:120%;letter-spacing:-.03em}
-.feature p{margin:0;color:var(--muted)}
-.feature ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-.feature li{display:grid;grid-template-columns:22px 1fr;gap:8px}
-.feature li::before{content:"→";color:var(--cobalt);font-family:var(--mono)}
-.graph{background:var(--cobalt-soft);padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:12px;min-width:0}
-.node{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font:14px var(--mono)}
-.node small{color:var(--muted);font-size:12px;text-align:right}
-.node.gate{border:1.5px dashed var(--signal);background:var(--signal-soft)}
-.node.gate b{color:var(--signal);font-weight:500}
-.edge{width:2px;height:16px;background:var(--cobalt);margin-left:28px;opacity:.5}
-.graph .eyebrow{margin-bottom:6px}
 
 /* case studies */
 .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
@@ -150,7 +134,6 @@ nav ul a:hover{color:var(--ink)}
 .job ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;max-width:68ch}
 .job li::marker{color:var(--cobalt)}
 .job li strong{font-weight:600}
-.hl{background:var(--signal-soft);color:var(--signal);padding:0 4px;border-radius:4px;font-weight:600;white-space:nowrap}
 
 /* toolkit + creds */
 .split{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
@@ -176,7 +159,7 @@ nav ul a:hover{color:var(--ink)}
 footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:12.5px var(--mono);color:var(--muted)}
 
 @media (max-width:900px){
-  .hero,.feature,.split,.contact{grid-template-columns:1fr}
+  .hero,.split,.contact{grid-template-columns:1fr}
   .hero{margin-top:0}
   .head,.job{grid-template-columns:1fr;gap:10px}
   .more-row{grid-template-columns:1fr;gap:6px}
@@ -207,31 +190,30 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:1
 
   <header class="hero">
     <div>
-      <span class="eyebrow">Data Engineer · Analytics Engineer · Nairobi</span>
+      <span class="eyebrow">Data Engineer · Data Analyst · Nairobi</span>
       <h1>Emmanuel <em>Kipngeno</em></h1>
-      <p class="role">I build data platforms that make analytics <b>cheaper, faster and trusted</b>.</p>
-      <p class="sub">Lakehouse migrations, streaming pipelines, dbt models and ML that ships, from raw operational data to the decisions it should drive.</p>
+      <p class="role">I build data pipelines that are <b>validated, repeatable and easy to trust</b>.</p>
+      <p class="sub">Python, SQL and PostgreSQL, from API extraction and incremental loads to Kafka streaming and dashboards. I started out checking site records as a Clerk of Works, and I still treat data quality as the first job.</p>
       <div class="cta">
         <a class="btn primary" href="#work">See the work</a>
         <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
 
-    <figure class="query" style="margin:0" aria-label="Career impact, shown as a SQL query result">
-      <div class="query-bar"><i></i><i></i><i></i><span>impact.sql · snowflake</span></div>
-      <div class="sql"><span class="k">SELECT</span> metric, change
-<span class="k">FROM</span>   emmanuel.impact
-<span class="k">WHERE</span>  verified <span class="k">=</span> TRUE
-<span class="k">ORDER BY</span> ABS(change) <span class="k">DESC</span>;  <span class="c">-- 3 rows</span></div>
+    <figure class="query" style="margin:0" aria-label="Pipelines I have built and the guarantee each one makes, shown as a SQL query result">
+      <div class="query-bar"><i></i><i></i><i></i><span>projects.sql · postgres</span></div>
+      <div class="sql"><span class="k">SELECT</span> pipeline, guarantee
+<span class="k">FROM</span>   emmanuel.projects
+<span class="k">WHERE</span>  my_code <span class="k">=</span> TRUE;  <span class="c">-- 3 rows</span></div>
       <div class="result">
         <table>
-          <thead><tr><th>metric</th><th style="text-align:right">change</th></tr></thead>
+          <thead><tr><th>pipeline</th><th style="text-align:right">guarantee</th></tr></thead>
           <tbody>
-            <tr><td>pipeline_processing_time</td><td class="v">−50%</td></tr>
-            <tr><td>warehouse_storage_cost</td><td class="v">−35%</td></tr>
-            <tr><td>customer_satisfaction</td><td class="v">+28%</td></tr>
+            <tr><td>eth_price_stream</td><td class="v sm">at-least-once</td></tr>
+            <tr><td>mpesa_incremental_etl</td><td class="v sm">idempotent</td></tr>
+            <tr><td>sales_csv_pipeline</td><td class="v sm">rejects logged</td></tr>
           </tbody>
-          <caption>Data Science East Africa · 2026</caption>
+          <caption>The code for every row is on GitHub</caption>
         </table>
       </div>
     </figure>
@@ -241,37 +223,10 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:1
     <div class="head">
       <span class="eyebrow">Selected work</span>
       <div>
-        <h2 id="work-h">Problems solved, with the numbers</h2>
-        <p>Each project below starts from a real business problem. Where there is a measured result, it leads.</p>
+        <h2 id="work-h">Pipelines, and how they hold up</h2>
+        <p>Each project links to its code. Team projects say which parts were mine.</p>
       </div>
     </div>
-
-    <article class="feature">
-      <div class="feature-copy">
-        <span class="badge">Featured · Building now</span>
-        <h3>MinuteMan</h3>
-        <p>Meeting notes are where commitments get lost. MinuteMan is an agentic pipeline that turns a transcript or recorded video into owned, dated action items, with a person approving everything before it reaches the team.</p>
-        <ul>
-          <li><span>Extracts owner, task, deadline and the exact source quote, so every item can be checked.</span></li>
-          <li><span>Approval is a real interrupt in the LangGraph execution graph.</span></li>
-          <li><span>Scored against a labelled dataset with precision, recall and F1.</span></li>
-          <li><span>Works with Claude or GPT, pulls YouTube captions, posts approved output to Slack.</span></li>
-        </ul>
-        <div class="stack"><span>LangGraph</span><span>LLM evaluation</span><span>Python</span><span>Slack API</span></div>
-      </div>
-      <div class="graph" aria-label="MinuteMan execution graph">
-        <span class="eyebrow">Execution graph</span>
-        <div class="node">transcript / video<small>YouTube captions</small></div>
-        <div class="edge"></div>
-        <div class="node">extract_actions<small>owner · task · due · quote</small></div>
-        <div class="edge"></div>
-        <div class="node">summarise<small>decisions recap</small></div>
-        <div class="edge"></div>
-        <div class="node gate"><b>human_review</b><small>interrupt · edit · reject</small></div>
-        <div class="edge"></div>
-        <div class="node">post_to_slack<small>on approval only</small></div>
-      </div>
-    </article>
 
     <article class="proof">
       <a class="shot" href="eth-dashboard.png" target="_blank" rel="noopener">
@@ -279,15 +234,15 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:1
       </a>
       <div class="proof-copy">
         <div class="case-top">
-          <div><span class="eyebrow">Live dashboard</span><h4 style="margin-top:8px">Real-Time Ethereum Tracker</h4></div>
+          <div><span class="eyebrow">Team project · Night of Code</span><h4 style="margin-top:8px">Real-Time Ethereum Tracker</h4></div>
           <div class="stat">1-min<small>live candles</small></div>
         </div>
         <dl>
-          <dt>Problem</dt><dd>Market dashboards need fresh prices, delivered once and in order.</dd>
-          <dt>Built</dt><dd>Binance → Kafka → PostgreSQL → Grafana. A deduplicating producer and an upserting consumer stream live 1-minute candles.</dd>
-          <dt>Result</dt><dd>A live Grafana dashboard with ETH priced in USD and Kenyan shillings, 24-hour range, volume and per-minute change, refreshing every 30 seconds.</dd>
+          <dt>Problem</dt><dd>A live price dashboard needs every candle delivered once, in order, and never lost.</dd>
+          <dt>My part</dt><dd>The Python producer and consumer, plus the Aiven Kafka and PostgreSQL setup. The producer polls Binance for closed 1-minute candles and publishes each one once. The consumer upserts into PostgreSQL and commits to the database before the Kafka offset, so a crash can only cause a harmless re-insert.</dd>
+          <dt>Result</dt><dd>A streaming feed behind the team's Grafana dashboard, with ETH priced in USD and Kenyan shillings.</dd>
         </dl>
-        <div class="stack"><span>Kafka</span><span>PostgreSQL</span><span>Grafana</span><span>Python</span></div>
+        <div class="stack"><span>Python</span><span>Kafka</span><span>PostgreSQL</span><span>Aiven</span><span>Grafana</span></div>
         <a href="https://github.com/iManukr/realtime-eth-pipeline">Code on GitHub →</a>
       </div>
     </article>
@@ -295,133 +250,118 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:1
     <div class="cases">
       <article class="case">
         <div class="case-top">
-          <h4>ELT Lakehouse Migration</h4>
-          <div class="stat">−35%<small>storage cost</small></div>
+          <h4>Incremental ETL for M-Pesa Batches</h4>
+          <div class="stat">0<small>double counts on re-run</small></div>
         </div>
         <dl>
-          <dt>Problem</dt><dd>A traditional warehouse that was costly to store in and slow to process.</dd>
-          <dt>Built</dt><dd>Led the move to an ELT lakehouse: Fivetran ingestion, Snowflake, dbt models, Airflow orchestration.</dd>
-          <dt>Result</dt><dd>Storage costs down about 35%, processing time down 50%.</dd>
+          <dt>Problem</dt><dd>Daily payment batches arrive with new, changed and repeated transactions. Re-running a load must not double-count.</dd>
+          <dt>Built</dt><dd>Sorts each batch into new, updated, duplicate and invalid rows using set operations, checkpoints progress and swaps the table in atomically.</dd>
+          <dt>Result</dt><dd>Running it once or ten times gives the same correct table.</dd>
         </dl>
-        <div class="stack"><span>Fivetran</span><span>Snowflake</span><span>dbt</span><span>Airflow</span></div>
+        <div class="stack"><span>Python</span><span>CSV / JSON</span><span>Logging</span></div>
+        <a href="https://github.com/iManukr/day3-incremental-etl">Code on GitHub →</a>
       </article>
 
       <article class="case">
         <div class="case-top">
-          <h4>AWS Data Lake &amp; Warehouse</h4>
-          <div class="stat">S3→RS<small>lake to warehouse</small></div>
+          <h4>Multi-File Sales Pipeline</h4>
+          <div class="stat">Every<small>reject has a reason</small></div>
         </div>
         <dl>
-          <dt>Problem</dt><dd>Analytics data scattered across sources with no shared foundation.</dd>
-          <dt>Built</dt><dd>Amazon S3 as the data lake and Redshift as the warehouse, with structured ingestion feeding transformation and reporting.</dd>
-          <dt>Result</dt><dd>A scalable base for centralised analytics workloads.</dd>
+          <dt>Problem</dt><dd>Supermarket branches drop daily sales CSVs with inconsistent columns and bad rows.</dd>
+          <dt>Built</dt><dd>Finds each day's file, maps column aliases, validates every row, consolidates the clean data and writes rejected rows with their reasons.</dd>
+          <dt>Result</dt><dd>One trusted sales file plus an audit trail. Adding a new day needs no code change.</dd>
         </dl>
-        <div class="stack"><span>Amazon S3</span><span>Redshift</span><span>AWS RDS</span><span>SQL</span></div>
+        <div class="stack"><span>Python</span><span>Standard library</span><span>Data validation</span></div>
+        <a href="https://github.com/iManukr/day2-multi-file-pipeline-">Code on GitHub →</a>
       </article>
 
       <article class="case">
         <div class="case-top">
           <h4>Crypto Analytics Platform</h4>
-          <div class="stat">1 cmd<small>full stack up</small></div>
+          <div class="stat">Team<small>project</small></div>
         </div>
         <dl>
-          <dt>Problem</dt><dd>Operational data in Postgres, analytics needed in near real time.</dd>
-          <dt>Built</dt><dd>Debezium change data capture into ClickHouse, dbt staging and marts, Airflow schedules, Prometheus and Grafana monitoring.</dd>
-          <dt>Result</dt><dd>The whole platform starts with one <span class="mono">docker compose up</span>.</dd>
+          <dt>Problem</dt><dd>Operational data lives in PostgreSQL, but analytics needs it in near real time.</dd>
+          <dt>Built</dt><dd>A team-built change data capture platform: Debezium into ClickHouse through Kafka, dbt staging and marts, Airflow schedules, Prometheus and Grafana monitoring. It grew out of the Ethereum tracker above.</dd>
+          <dt>Result</dt><dd>The whole stack starts with one <span class="mono">docker compose up</span>.</dd>
         </dl>
-        <div class="stack"><span>Debezium</span><span>ClickHouse</span><span>dbt</span><span>Docker</span></div>
+        <div class="stack"><span>PostgreSQL</span><span>Debezium</span><span>Kafka</span><span>ClickHouse</span><span>dbt</span></div>
         <a href="https://github.com/iManukr/crypto-analytics-platform">Code on GitHub →</a>
       </article>
 
       <article class="case">
         <div class="case-top">
           <h4>Mobile-Money Credit Risk Model</h4>
-          <div class="stat">Thin-file<small>borrowers scored</small></div>
+          <div class="stat">Thin-file<small>borrowers</small></div>
         </div>
         <dl>
           <dt>Problem</dt><dd>Lenders can't score people with little or no traditional credit history.</dd>
-          <dt>Built</dt><dd>A Python credit-risk model using mobile-money transaction histories and customer financial data.</dd>
-          <dt>Result</dt><dd>Supported lending decisions at Malilatech Consultancies.</dd>
+          <dt>Built</dt><dd>A Python credit-risk model using mobile-money transaction histories, with cleaned and validated input data.</dd>
+          <dt>Where</dt><dd>Malilatech Consultancies, 2024.</dd>
         </dl>
-        <div class="stack"><span>Python</span><span>Credit scoring</span><span>Fintech data</span></div>
-      </article>
-
-      <article class="case">
-        <div class="case-top">
-          <h4>NLP on Customer Records</h4>
-          <div class="stat">+28%<small>satisfaction, 3 mo</small></div>
-        </div>
-        <dl>
-          <dt>Problem</dt><dd>Customer feedback sat in free text nobody could analyse at scale.</dd>
-          <dt>Built</dt><dd>Text analysis with NLTK, TextBlob and spaCy to surface sentiment and recurring issues.</dd>
-          <dt>Result</dt><dd>Contributed to a 28% rise in customer satisfaction over three months.</dd>
-        </dl>
-        <div class="stack"><span>spaCy</span><span>NLTK</span><span>TextBlob</span></div>
-      </article>
-
-      <article class="case">
-        <div class="case-top">
-          <h4>JCars Sales Analytics</h4>
-          <div class="stat">BI<small>end to end</small></div>
-        </div>
-        <dl>
-          <dt>Problem</dt><dd>Raw car sales data with duplicates and inconsistent formats.</dd>
-          <dt>Built</dt><dd>Cleaned it in Power Query, designed a dimensional model and wrote DAX measures.</dd>
-          <dt>Result</dt><dd>A Power BI dashboard on sales, revenue, profit, branches, regions, reps and delivery performance.</dd>
-        </dl>
-        <div class="stack"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Data modelling</span></div>
+        <div class="stack"><span>Python</span><span>SQL</span><span>Credit scoring</span></div>
       </article>
     </div>
 
     <div class="more" aria-label="More projects">
       <div class="more-row"><h5>PowerCo Churn Analysis</h5><p>BCG X job simulation: tested whether electricity pricing drives churn, with EDA and feature engineering.</p><a href="https://github.com/iManukr/PowerCo-Churn-Analysis">GitHub →</a></div>
-      <div class="more-row"><h5>Incremental ETL, Lipa Haraka</h5><p>Idempotent merge of daily M-Pesa and card batches. Re-runs never double-count.</p><a href="https://github.com/iManukr/day3-incremental-etl">GitHub →</a></div>
-      <div class="more-row"><h5>Soko Fresh Multi-File Pipeline</h5><p>Validates and consolidates daily sales CSVs from four branches, logging every rejected row with its reason.</p><a href="https://github.com/iManukr/day2-multi-file-pipeline-">GitHub →</a></div>
+      <div class="more-row"><h5>API Customer Extraction</h5><p>Pulls nested JSON from a REST API, flattens it recursively and exports a clean CSV, with unit tests.</p><a href="https://github.com/iManukr/day1-api-extraction">GitHub →</a></div>
+      <div class="more-row"><h5>Google Sheets to PostgreSQL</h5><p>Loads a chosen worksheet into a cloud PostgreSQL table through a service account, pandas and SQLAlchemy.</p><a href="https://github.com/iManukr/googlesheet-to-database-etl">GitHub →</a></div>
       <div class="more-row"><h5>Iris Prediction API</h5><p>Trained classifier served through FastAPI with interactive docs.</p><a href="https://github.com/iManukr/iris-flower-api">GitHub →</a></div>
-      <div class="more-row"><h5>RentFlow</h5><p>Car rental management system in object-oriented Python for a Kenyan rental company.</p><a href="https://github.com/iManukr/RentFlow">GitHub →</a></div>
+      <div class="more-row"><h5>RentFlow</h5><p>Car rental management system in object-oriented Python, with a unit test suite.</p><a href="https://github.com/iManukr/RentFlow">GitHub →</a></div>
     </div>
   </section>
 
   <section id="experience" aria-labelledby="exp-h">
     <div class="head">
       <span class="eyebrow">Experience</span>
-      <h2 id="exp-h">Where I've done it</h2>
+      <h2 id="exp-h">Where I've worked</h2>
     </div>
     <div class="timeline">
       <div class="job">
-        <div class="when"><b>Apr 2026 – Present</b>Nairobi · On-site</div>
+        <div class="when"><b>Apr 2026 – Present</b>Nairobi</div>
         <div>
-          <h3>Data Science / Analytics Engineering</h3>
-          <p class="org"><b>Data Science East Africa</b> · Full-time</p>
+          <h3>Data Science Analyst</h3>
+          <p class="org"><b>Data Science East Africa</b> · client: LuxDevHQ</p>
           <ul>
-            <li>Led the migration to an ELT lakehouse on Fivetran, Snowflake, dbt and Airflow, cutting storage costs <span class="hl">35%</span> and processing time <span class="hl">50%</span>.</li>
-            <li>Designed data infrastructure on AWS S3 and Amazon Redshift for centralised analytics.</li>
-            <li>Built pipelines integrating relational and NoSQL sources, including PostgreSQL and AWS RDS.</li>
-            <li>Wrote reusable SQL and dbt models that turn raw operational data into analytics-ready datasets.</li>
-            <li>Applied NLP to customer records, contributing to a <span class="hl">28%</span> rise in customer satisfaction in three months.</li>
+            <li>Support data systems that hold LuxDevHQ learners' personal data, keeping it confidential as required by Kenya's Data Protection Act, 2019.</li>
+            <li>Contributed to a team migration of the analytics platform to an ELT lakehouse.</li>
+            <li>Contributed to NLP analysis of customer feedback records.</li>
           </ul>
         </div>
       </div>
       <div class="job">
-        <div class="when"><b>Jan 2025 – Mar 2026</b>Eldoret · On-site</div>
+        <div class="when"><b>Jan 2025 – Mar 2026</b>Kenya</div>
         <div>
-          <h3>Assistant Engineer</h3>
-          <p class="org"><b>Moswin Enterprises</b> · Full-time</p>
+          <h3>Clerk of Works</h3>
+          <p class="org"><b>Moswin Enterprises Limited</b></p>
           <ul>
-            <li>Collected and validated operational and project data, and maintained inspection records.</li>
-            <li>Analysed operational data for project planning and produced progress and performance reports.</li>
-            <li>Coordinated information across project stakeholders using structured reporting.</li>
+            <li>Supervised construction work and enforced quality standards, reporting to the Project Manager.</li>
+            <li>Kept and checked site records for accuracy and completeness, and prepared progress and compliance reports.</li>
+            <li>Coordinated workers and resolved on-site issues with contractors and stakeholders.</li>
           </ul>
         </div>
       </div>
       <div class="job">
-        <div class="when"><b>May 2024 – Dec 2024</b>Nairobi · Hybrid</div>
+        <div class="when"><b>Jul 2024 – Dec 2024</b>Kericho County</div>
+        <div>
+          <h3>Data Collection Lead</h3>
+          <p class="org"><b>State Department for Social Protection &amp; Senior Citizen Affairs</b></p>
+          <ul>
+            <li>Led 12 data collectors and trained them on procedures and confidential handling of respondents' personal data.</li>
+            <li>Reviewed records for completeness and consistency, and coordinated corrections.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="when"><b>Jan 2024 – Jul 2024</b>Kenya</div>
         <div>
           <h3>Data Analyst / Junior Data Scientist</h3>
-          <p class="org"><b>Malilatech Consultancies</b> · Contract</p>
+          <p class="org"><b>Malilatech Consultancies</b></p>
           <ul>
-            <li>Developed a Python credit-risk model to support lending decisions.</li>
-            <li>Used mobile-money transaction histories to assess borrowers with thin or no credit files.</li>
+            <li>Cleaned, transformed and validated datasets in Python and SQL, and ran exploratory analysis for anomalies and trends.</li>
+            <li>Developed a Python credit-risk model using mobile-money transaction histories for borrowers with thin or no credit files.</li>
           </ul>
         </div>
       </div>
@@ -430,22 +370,21 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:1
 
   <section id="toolkit" aria-labelledby="tk-h">
     <div class="head">
-      <span class="eyebrow">Toolkit &amp; credentials</span>
+      <span class="eyebrow">Toolkit &amp; education</span>
       <h2 id="tk-h">What I work with</h2>
     </div>
     <div class="split">
       <div class="tools">
-        <div><h4>Warehouse &amp; lake</h4><p>Snowflake, Amazon Redshift, S3, ClickHouse, PostgreSQL, AWS RDS</p></div>
-        <div><h4>Pipelines</h4><p>dbt, Airflow, Fivetran, Kafka, Debezium CDC, Python, SQL</p></div>
-        <div><h4>ML &amp; AI</h4><p>scikit-learn, Pandas, spaCy, NLTK, LangGraph, LLM evaluation</p></div>
-        <div><h4>BI &amp; delivery</h4><p>Power BI, DAX, Grafana, FastAPI, Docker, Bubble.io</p></div>
+        <div><h4>Languages &amp; data</h4><p>Python (pandas, requests), SQL, PostgreSQL, Excel</p></div>
+        <div><h4>Pipelines</h4><p>ETL and incremental loads, REST APIs, Kafka producers and consumers, data validation</p></div>
+        <div><h4>Analysis &amp; reporting</h4><p>Exploratory analysis in Jupyter, Grafana dashboards</p></div>
+        <div><h4>Tools</h4><p>Git and GitHub, Linux / WSL, Aiven managed services, unittest</p></div>
+        <div><h4>Team-project exposure</h4><p>Debezium, ClickHouse, dbt, Airflow, Docker</p></div>
+        <div><h4>Currently learning</h4><p>Snowflake, AWS (S3, Redshift), cloud data warehousing</p></div>
       </div>
       <div class="creds">
-        <div class="cred"><div><b>BSc, Building &amp; Civil Technology with Computing</b><span>Moi University</span></div><time>2019–2023</time></div>
-        <div class="cred"><div><b>Data Engineering</b><span>LuxDevHq</span></div><time>Programme</time></div>
+        <div class="cred"><div><b>Bachelor of Technology Education</b><span>Building and Construction Technology and Computing · Moi University · Second Class Upper</span></div><time>Dec 2024</time></div>
         <div class="cred"><div><b>Data Science Job Simulation</b><span>BCG X · Forage</span></div><time>2026</time></div>
-        <div class="cred"><div><b>Beginner Data Science</b><span>Data Ladder · Everything Data Community</span></div><time>2024</time></div>
-        <div class="cred"><div><b>OCI Foundations Associate</b><span>Oracle</span></div><time>2023</time></div>
       </div>
     </div>
   </section>
@@ -453,8 +392,8 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:1
   <section class="contact" id="contact" aria-labelledby="ct-h">
     <div>
       <span class="eyebrow" style="color:inherit;opacity:.6">Contact</span>
-      <h2 id="ct-h" style="margin-top:14px">Have data that should be <span>doing more?</span></h2>
-      <p>I'm interested in data engineering, analytics engineering and applied ML work, in Nairobi or remote.</p>
+      <h2 id="ct-h" style="margin-top:14px">Looking for my next <span>data role</span></h2>
+      <p>I'm open to junior data engineering and data analyst roles, as well as data operations work, in Nairobi or remote.</p>
     </div>
     <div class="links">
       <div class="row"><span>immkipngeno14@gmail.com</span><button id="copy" type="button">Copy email</button></div>
